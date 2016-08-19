@@ -1,0 +1,25 @@
+    Options +FollowSymlinks
+    RewriteEngine on
+
+    ####################################################################
+    ########################## PROTOCOLE SSL ###########################
+    ####################################################################
+    ## Si le protocole ssl est actif sur le site app->contante::$HTTP ##
+    ## alors les commentaire doivent être enlever par l'utilisateur   ##
+    ## dans la configuration de l'application ou du site              ##
+    ####################################################################
+
+    #RewriteCond %{HTTPS} off
+    #RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+
+    ####################################################################
+    ############################# REWRITE ##############################
+    ####################################################################
+    ##  Si le Protocole REWRITE_ENGINE est ON alors désigner ici les  ##
+    ##  routes nécessaire au bon fonctionnement du programme          ##
+    ####################################################################
+
+    #RewriteRule ^/articles/lire-([0-9]+)-([a-z0-9\-]+)\.html$ /index.php?rub=lireArticle&id=$1
+
+
